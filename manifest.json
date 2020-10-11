@@ -1,0 +1,23 @@
+{
+    "name": "HocusFocus",
+    "version": "1.0",
+    "description": "Focus on your work and get it done faster for more free time!",
+    "manifest_version": 2,
+    "content_scripts" :[
+       {
+           "matches":["<all_urls>"],
+           "js": ["blocker.js"]
+       } 
+    ],
+    "browser_action" :{
+        "default_popup" : "popup.html",
+        "default_title" : "HocusFocus"
+    },
+    "background": {
+        "scripts": [
+            "socket.io.js",
+            "background.js"
+        ]
+    },
+    "permissions":["tabs"]
+  }

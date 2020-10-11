@@ -1,0 +1,37 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='index.css', type='text/css' )
+        link(rel='stylesheet', href='../modules/blocker/blocker.css', type='text/css')
+        link(rel='stylesheet', href='../modules/calendar/calendar.css', type='text/css')
+        link(rel='stylesheet', href='../modules/settings/settings.css', type='text/css')
+    body
+        div.wrapper
+            div.taskbar
+                .taskbar-left
+                    p.taskbar-text HocusFocus
+                .taskbar-right
+                    button#minimize.taskbar-button -
+                    button#maximize.taskbar-button +
+                    button#close.taskbar-button x
+            div.box-wrapper
+                div.settings
+                    div.settings-top
+                        button#blocker.button.top
+                            img.unselectable(src="../images/magic-wand.svg", alt="Blocker", height="48", width="48")
+                        button#calendar.button.top
+                            img.unselectable(src="../images/calendar.svg", alt="Calendar", height="48", width="48")
+                    div.settings-bottom
+                        p.settings-version 1.0.0
+                        .settings-liner
+                        button#settings.button.bottom
+                            img.unselectable(src="../images/gear.svg", alt="Calendar" height="48", width="48")
+                div.app
+                    include ../modules/blocker/blocker.pug
+                    include ../modules/calendar/calendar.pug
+                    include ../modules/settings/settings.pug
+    script(src='./switcher.js')
+    script(src='./renderer.js')
+    script(src='../modules/blocker/blocker.js')
+    script(src="../modules/calendar/calendar.js")
